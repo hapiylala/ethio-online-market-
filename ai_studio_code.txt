@@ -1,0 +1,99 @@
+{
+  "projectName": "EthioOnlineMarket",
+  "templateStatus": "Ready for implementation",
+  "featuresDetected": [
+    "Responsive navigation bar with city selection",
+    "Hero search section with location filtering",
+    "Category navigation icons",
+    "Card grid with TOP AD boost badges",
+    "Direct seller calling triggers",
+    "Mobile bottom navigation bar"
+  ],
+  "nextInteractiveModules": [
+    {
+      "name": "Post Ad Modal",
+      "description": "Popup form triggered by the '+ POST AD' button allowing sellers to upload photos, enter ETB price, select category, and add phone number."
+    },
+    {
+      "name": "Seller Phone Reveal",
+      "description": "Changes 'Call Seller' button to reveal the actual phone number on click or directly launch tel:+2519... protocol."
+    },
+    {
+      "name": "Live Search & Filter",
+      "description": "Instant client-side or API search filtering products by keyword, category, and sub-city."
+    },
+    {
+      "name": "Telebirr / Chapa Payment Boost",
+      "description": "Allows sellers to pay a listing fee via Telebirr or CBE Birr to display the amber TOP AD badge."
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "endpoint": "/api/listings",
+      "method": "GET",
+      "description": "Fetch all listings with optional query params (?city=Bole&category=phones)"
+    },
+    {
+      "endpoint": "/api/listings",
+      "method": "POST",
+      "description": "Create a new product listing with image uploads"
+    },
+    {
+      "endpoint": "/api/listings/:id/boost",
+      "method": "POST",
+      "description": "Initialize a Chapa or Telebirr transaction to boost an ad"
+    }
+  ],
+  "sampleListings": [
+    {
+      "id": 1,
+      "title": "iPhone 15 Pro Max 256GB Natural",
+      "price": 115000,
+      "currency": "ETB",
+      "isNegotiable": true,
+      "isFeatured": true,
+      "location": "Bole, Addis Ababa",
+      "phone": "+251911223344",
+      "category": "Phones & Tablets"
+    },
+    {
+      "id": 2,
+      "title": "Toyota Vitz 2012 Automatic",
+      "price": 1480000,
+      "currency": "ETB",
+      "isNegotiable": true,
+      "isFeatured": false,
+      "location": "Gerji, Addis Ababa",
+      "phone": "+251922334455",
+      "category": "Vehicles"
+    },
+    {
+      "id": 3,
+      "title": "HP Victus Core i7 16GB RTX 3050",
+      "price": 68000,
+      "currency": "ETB",
+      "isNegotiable": false,
+      "isFeatured": false,
+      "location": "Piassa, Addis Ababa",
+      "phone": "+251933445566",
+      "category": "Computers"
+    },
+    {
+      "id": 4,
+      "title": "Modern L-Shape Sofa Set (New)",
+      "price": 32000,
+      "currency": "ETB",
+      "isNegotiable": true,
+      "isFeatured": false,
+      "location": "Ayat, Addis Ababa",
+      "phone": "+251944556677",
+      "category": "Home & Furniture"
+    }
+  ],
+  "nextSteps": [
+    "Add JavaScript handlers for the Call Seller buttons to dial or show contact info",
+    "Integrate a modal dialog for ad posting",
+    "Connect front-end cards to dynamic data from a database or JSON API",
+    "Configure Telebirr / Chapa payment gateway for paid ad promotions"
+  ]
+}
